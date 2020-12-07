@@ -9,7 +9,7 @@ As usual, the dataset is split into the training and the test set, but instead o
 
 |   File Path    | Description |
 | ----------- | ----------- |
-| train\NORMAL      | 1,342 images containing X-rays of normal lungs for testing     |
+| train\NORMAL      | 1,342 images containing X-rays of normal lungs for training     |
 | train\PNEUMONIA   | 3,876 images containing X-rays of lungs with pneumonia for training        |
 | test\NORMAL      | 234  images containing X-rays of normal lungs for validation     |
 | test\PNEUMONIA   | 390 images containing X-rays of lungs with pneumonia for validation       |
