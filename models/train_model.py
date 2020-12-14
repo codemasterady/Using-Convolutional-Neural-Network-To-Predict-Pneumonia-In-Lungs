@@ -70,7 +70,7 @@ cnn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Fitting the training & the test set into the model
 tic = time.time()
-cnn.fit(x=training_set, validation_data=test_set, epochs=1)
+cnn.fit(x=training_set, validation_data=test_set, epochs=50)
 toc = time.time()
 
-print(f"Training took {str(toc - tic)} seconds")
+print(f"Training took {str((toc - tic)/3600)} hours")
