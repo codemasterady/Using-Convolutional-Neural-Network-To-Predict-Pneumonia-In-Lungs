@@ -23,7 +23,7 @@ test_datagen = ImageDataGenerator(
 training_set = train_datagen.flow_from_directory(
     r'C:/Users/Selvaseetha/YouTube Codes/Pneumonia X-Ray Detector/archive/chest_xray/train',
     target_size = (416, 416),
-    batch_size = 32,
+    batch_size = 64,
     class_mode = 'binary'
     )
 
@@ -31,7 +31,7 @@ training_set = train_datagen.flow_from_directory(
 test_set = test_datagen.flow_from_directory(
     r'C:/Users/Selvaseetha/YouTube Codes/Pneumonia X-Ray Detector/archive/chest_xray/test',
     target_size = (416, 416),
-    batch_size = 32,
+    batch_size = 64,
     class_mode = 'binary'
     )
 
@@ -70,7 +70,7 @@ cnn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Fitting the training & the test set into the model
 tic = time.time()
-cnn.fit(x=training_set, validation_data=test_set, epochs=50)
+cnn.fit(x=training_set, validation_data=test_set, epochs=1)
 toc = time.time()
 
-print(f"Training took {str((toc - tic)/3600)} hours")
+print(f"Training took {str((toc - tic)/60)} mins")
