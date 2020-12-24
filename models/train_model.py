@@ -76,7 +76,12 @@ cnn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Fitting the training & the test set into the model
 tic = time.time()
+# cnn.fit(x=training_set, validation_data=test_set, epochs=45)
 cnn.fit(x=training_set, validation_data=test_set, epochs=45)
 toc = time.time()
 
 print(f"Training took {str((toc - tic)/60)} mins")
+
+# Saving the model
+cnn.save_weights('weights.h5', overwrite=True)
+print("Model Saved")
