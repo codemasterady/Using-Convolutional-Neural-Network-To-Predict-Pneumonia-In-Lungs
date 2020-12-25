@@ -66,7 +66,7 @@ cnn.add(tf.keras.layers.Conv2D(filters=4, kernel_size=(3, 3), strides=1, activat
 cnn.add(tf.keras.layers.Conv2D(filters=4, kernel_size=(3, 3), strides=1, activation='relu',input_shape=(13, 13, 1024)))
 cnn.add(tf.keras.layers.Conv2D(filters=4, kernel_size=(1, 1), strides=1, activation='relu',input_shape=(13, 13, 125)))
 cnn.add(tf.keras.layers.Flatten())
-
+ 
 # Fully Connected layers
 cnn.add(tf.keras.layers.Dense(units=128, activation='relu'))
 cnn.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
@@ -76,8 +76,7 @@ cnn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Fitting the training & the test set into the model
 tic = time.time()
-# cnn.fit(x=training_set, validation_data=test_set, epochs=45)
-cnn.fit(x=training_set, validation_data=test_set, epochs=45)
+cnn.fit(x=training_set, validation_data=test_set, epochs=9)
 toc = time.time()
 
 print(f"Training took {str((toc - tic)/60)} mins")
